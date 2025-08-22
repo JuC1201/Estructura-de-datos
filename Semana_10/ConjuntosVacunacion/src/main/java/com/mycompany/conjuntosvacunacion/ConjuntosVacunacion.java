@@ -9,6 +9,7 @@ public class ConjuntosVacunacion {
     public static void main(String[] args) {
     //CREACIÓN DE CONJUNTOS
         //Población total ficticia (500 ciudadanos)
+        //Se generan nombres como "Ciudadano 1","Ciudadano 2",..,"Ciudadano 500"
         Set<String> poblacion = new HashSet<>();
         for (int i = 1; i <= 500; i++) {
             poblacion.add("Ciudadano " + i);
@@ -28,6 +29,8 @@ public class ConjuntosVacunacion {
   
     //OPERACIONES DE CONJUNTOS
         //1.Ciudadanos que NO se han vacunado
+        /*Se crea una copia de la población y se eliminan los vacunados con Pfizer 
+        y AstraZeneca*/
         Set<String> noVacunados = new HashSet<>(poblacion);
         noVacunados.removeAll(vacunadosPfizer);
         noVacunados.removeAll(vacunadosAstra);
